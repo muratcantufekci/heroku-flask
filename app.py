@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[3]:
+# In[ ]:
 
 
 import numpy as np
@@ -12,9 +12,9 @@ app = Flask(__name__)
 
 
 model = pickle.load(open('diagnosismodel.pkl', 'rb'))
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def home():
-    if flask.request.method=='GET':
+    
         return '<h1> API server is working </h1>'
     
 
