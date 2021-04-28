@@ -11,7 +11,7 @@ import pickle
 app = Flask(__name__)
 
 
-model = pickle.load(open('diagnosismodel.pkl', 'rb'))
+model = pickle.load(open('diagnosis_model2.pkl', 'rb'))
 @app.route('/')
 def home():
     
