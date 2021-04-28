@@ -24,9 +24,8 @@ def predict():
     diagnosis_predict = model.predict([[15,35,36,12,34,28,23,17,18,18,15]]) 
     return str(diagnosis_predict)
 
-if name == "main":
-    app.run(host="0.0.0.0", port=5000, debug=True)
-app.run()
+if __name__ == '__main__':
+    app.run(debug=True)
     
 
 
