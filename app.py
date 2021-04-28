@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[3]:
 
 
 import numpy as np
@@ -21,7 +21,17 @@ def home():
 @app.route('/predict')
 def predict():
    
-    diagnosis_predict = model.predict([[15,35,36,12,34,28,23,17,18,18,15]]) 
+    diagnosis_predict= model.predict([[request.args['Symptom_1'],
+                                       request.args['Symptom_2'],
+                                       request.args['Symptom_3'],
+                                       request.args['Symptom_4'],
+                                       request.args['Symptom_5'],
+                                       request.args['Symptom_6'],
+                                       request.args['Symptom_7'],
+                                       request.args['Symptom_8'],
+                                       request.args['Symptom_9'],
+                                       request.args['Symptom_10'],
+                                       request.args['Symptom_11']]]) 
     return str(diagnosis_predict)
 
 if __name__ == '__main__':
