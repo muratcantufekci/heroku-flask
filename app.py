@@ -8,17 +8,21 @@ import numpy as np
 from flask import Flask
 from flask import request,jsonify, render_template
 import pickle
+from flask_cors import CORS, cross_origin
 app = Flask(__name__)
-
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 model = pickle.load(open('diagnosis_model2.pkl', 'rb'))
 @app.route('/')
+@cross_origin()
 def home():
     
         return '<h1> API server is working </h1>'
     
 
 @app.route('/predict')
+@cross_origin()
 def predict():
     
     diagnosis_predict= model.predict([[request.args['Symptom_1'],
