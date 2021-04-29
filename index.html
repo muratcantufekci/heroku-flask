@@ -1,0 +1,1018 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <link href="~/assets/css/Prediction.css" rel="stylesheet" />
+    <link href="~/assets/css/Login.css" rel="stylesheet" />
+    <link href="~/assets/css/style.css" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="~/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <title>Diagnosis</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+
+
+    <!-- Template Main CSS File -->
+
+
+
+</head>
+
+<body>
+
+<style type="text/css" >
+body {
+    background: #add8e6;
+    background: -webkit-linear-gradient(45deg,#bbdeea,#e4f2f7);
+    background: -o-linear-gradient(45deg,#bbdeea,#e4f2f7);
+    background: -moz-linear-gradient(45deg,#bbdeea,#e4f2f7);
+    background: linear-gradient(45deg,#bbdeea,#e4f2f7);
+}
+
+* {
+ 
+    padding: 0;
+    box-sizing: border-box
+}
+
+/*body, html {
+    height: 100%;
+    font-family: Poppins-Regular,sans-serif
+}*/
+
+a {
+   text-decoration:none;
+    line-height: 1.7;
+    color: #666;
+    margin: 0;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    -moz-transition: all .4s
+}
+
+    a:focus {
+        outline: 0 !important
+    }
+
+    a:hover {
+        text-decoration: none
+    }
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0
+}
+
+input {
+    outline: 0;
+    border: none
+}
+
+    input:focus::-webkit-input-placeholder {
+        color: transparent
+    }
+
+    input:focus:-moz-placeholder {
+        color: transparent
+    }
+
+    input:focus::-moz-placeholder {
+        color: transparent
+    }
+
+    input:focus:-ms-input-placeholder {
+        color: transparent
+    }
+
+    input::-webkit-input-placeholder {
+        color: #adadad;
+    }
+
+    input:-moz-placeholder {
+        color: #adadad
+    }
+
+    input::-moz-placeholder {
+        color: #adadad
+    }
+
+    input:-ms-input-placeholder {
+        color: #adadad
+    }
+
+button {
+    outline: 0 !important;
+    border: none;
+    background: 0 0
+}
+
+    button:hover {
+        cursor: pointer
+    }
+
+/*.container {
+    max-width: 1200px
+}*/
+
+.container-contact100 {
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: #add8e6;
+    background: -webkit-linear-gradient(45deg,#bbdeea,#e4f2f7);
+    background: -o-linear-gradient(45deg,#bbdeea,#e4f2f7);
+    background: -moz-linear-gradient(45deg,#bbdeea,#e4f2f7);
+    background: linear-gradient(45deg,#bbdeea,#e4f2f7);
+}
+
+.wrap-contact100 {
+    width: 500px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 42px 55px 45px 55px
+}
+
+.contact100-form {
+    width: 100%
+}
+
+.contact100-form-title {
+    display: block;
+    font-family: Poppins-Bold;
+    font-size: 39px;
+    color: #333;
+    line-height: 1.2;
+    text-align: center;
+    padding-bottom: 10px
+}
+
+.wrap-input100 {
+    width: 100%;
+    position: relative;
+    border-bottom: 2px solid #d9d9d9;
+    padding-bottom: 10px;
+    margin-bottom: 15px
+}
+
+.input100 {
+    display: block;
+    width: 100%;
+    background: 0 0;
+    font-family: Poppins-Medium;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.2;
+    padding: 0 5px
+}
+
+.focus-input100 {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none
+}
+
+    .focus-input100::before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        -webkit-transition: all .4s;
+        -o-transition: all .4s;
+        -moz-transition: all .4s;
+        transition: all .4s;
+        background: #7f7f7f
+    }
+
+input.input100 {
+    height: 40px
+}
+
+.input100:focus + .focus-input100::before {
+    width: 100%
+}
+
+.has-val.input100 + .focus-input100::before {
+    width: 100%
+}
+
+.container-contact100-form-btn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 13px
+}
+
+.wrap-contact100-form-btn {
+    width: 100%;
+    display: block;
+    position: relative;
+    z-index: 1;
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 0 auto
+}
+
+.contact100-form-bgbtn {
+    position: absolute;
+    z-index: -1;
+    width: 300%;
+    height: 100%;
+    background: #add8e6;
+    background: -webkit-linear-gradient(left,#bbdeea,#c9e5ee,#d7ebf2,#e4f2f7);
+    background: -o-linear-gradient(left,#bbdeea,#c9e5ee,#d7ebf2,#e4f2f7);
+    background: -moz-linear-gradient(left,#bbdeea,#c9e5ee,#d7ebf2,#e4f2f7);
+    background: linear-gradient(left,#bbdeea,#e4f2f7,#c9e5ee,#e4f2f7);
+    top: 0;
+    left: -100%;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    -moz-transition: all .4s;
+    transition: all .4s
+}
+
+.contact100-form-btn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 50px;
+    font-family: Poppins-Medium;
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.2
+}
+
+.wrap-contact100-form-btn:hover .contact100-form-bgbtn {
+    left: 0
+}
+
+.contact100-form-btn i {
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    -moz-transition: all .4s;
+    transition: all .4s
+}
+
+.contact100-form-btn:hover i {
+    -webkit-transform: translateX(10px);
+    -moz-transform: transl ateX(10px);
+    -ms-transform: translateX(10px);
+    -o-transform: translateX(10px);
+    transform: translateX(10px) (max-width:576px)
+
+{
+    .wrap-contact100
+
+{
+    padding: 72px 15px 65px 15px
+}
+
+}
+
+.wrap-contact100 {
+    width: 800px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 42px 55px 45px 55px
+}
+
+.contact100-form-title {
+    font-size: 26px
+}
+</style >
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+
+           
+
+
+        </div>
+    </header><!-- End Header -->
+
+    <main id="main" style="margin-top:150px;">
+        <div class="container-contact100">
+            <div class="wrap-contact100">
+                <h1 id="title">???</h1>
+                <form class="contact100-form validate-form" method="post"  >
+                    <span class="contact100-form-title" style="font-size:32px">Symptom Prediction</span>
+                    <span class="contact100-form-title" id="output" style="color: #ff0000;">&nbsp;</span>
+
+                    <div class="wrap-input100 ">
+                        <span class="label-input100">First Symptom</span>
+                        <select class="input100" id="Symptom_1" name="Symptom_1" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;">
+                            <option value="">Select First Sypmtom</option>
+                            <option value="0">Acidity</option>
+                            <option value="1">Back pain</option>
+                            <option value="2">Burning micturition</option>
+                            <option value="3">Chest pain</option>
+                            <option value="4">Chills</option>
+                            <option value="5">Continuous sneezing</option>
+                            <option value="6">Fatigue</option>
+                            <option value="7">Headache</option>
+                            <option value="8">High fever</option>
+                            <option value="9">Indigestion</option>
+                            <option value="10">Itching</option>
+                            <option value="11">Joint pain</option>
+                            <option value="12">Muscle wasting</option>
+                            <option value="13">Muscle weakness</option>
+                            <option value="14">Patches in throat</option>
+                            <option value="15">Pus filled pimples</option>
+                            <option value="16">Severe headache</option>
+                            <option value="17">Shivering</option>
+                            <option value="18">Skin rash</option>
+                            <option value="19">Stiff neck</option>
+                            <option value="20">Stomach pain</option>
+                            <option value="21">Sunken eyes</option>
+                            <option value="22">Vomiting</option>
+                            <option value="23">Weakness in limbs</option>
+                            <option value="24">Weight gain</option>
+                            <option value="25">Weight loss</option>
+                            <option value="26">Wellowish skin</option>
+                        </select>
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="wrap-input100 ">
+                        <span class="label-input100">Second symptom</span>
+                        <select class="input100" id="Symptom_2" name="Symptom_2" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;">
+                            <option value="">Select Second Sypmton</option>
+                            <option value="0">Abdominal pain</option>
+                            <option value="1">Altered sensorium</option>
+                            <option value="2">Anxiety</option>
+                            <option value="3">Blackheads</option>
+                            <option value="4">Blister</option>
+                            <option value="5">Blurred and distorted vision</option>
+                            <option value="6">Breathlessness</option>
+                            <option value="7">Bruising</option>
+                            <option value="8">Burning micturition</option>
+                            <option value="9">Chills</option>
+                            <option value="10">Cold hands and feets</option>
+                            <option value="11">Continuous feel of urine</option>
+                            <option value="12">Dark urine</option>
+                            <option value="13">Dehydration</option>
+                            <option value="14">Diarrhoea</option>
+                            <option value="15">Dischromic patches</option>
+                            <option value="16">Dizziness</option>
+                            <option value="17">Extra marital contacts</option>
+                            <option value="18">Fatigue</option>
+                            <option value="19">Foul smell of urine</option>
+                            <option value="20">Headache</option>
+                            <option value="21">High fever</option>
+                            <option value="22">Hip joint pain</option>
+                            <option value="23">Knee pain</option>
+                            <option value="24">Lethargy</option>
+                            <option value="25">Loss of appetite</option>
+                            <option value="26">Loss of balance</option>
+                            <option value="27">Mood swings</option>
+                            <option value="28">Movement stiffness</option>
+                            <option value="29">Nausea</option>
+                            <option value="30">Neck pain</option>
+                            <option value="31">Nodal skin eruption</option>
+                            <option value="32">Obesity</option>
+                            <option value="33">Prolonged high fever</option>
+                            <option value="34">Red sore around nose</option>
+                            <option value="35">Restlessness</option>
+                            <option value="36">Scurring</option>
+                            <option value="37">Silver like dusting</option>
+                            <option value="38">Skin peeling</option>
+                            <option value="39">Spinning movements</option>
+                            <option value="40">Stomach pain</option>
+                            <option value="41">Strong headache on one side</option>
+                            <option value="42">Sweating</option>
+                            <option value="43">Swelling joints</option>
+                            <option value="44">Swelling of stomach</option>
+                            <option value="45">Ulcers on tongue</option>
+                            <option value="46">Vomiting</option>
+                            <option value="47">Watering from eyes</option>
+                            <option value="48">Weakness of one body side</option>
+                            <option value="49">Weight loss</option>
+                            <option value="50">Yellowish skin</option>
+
+
+                        </select>
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="wrap-input100 ">
+                        <span class="label-input100">Third Symptom</span>
+                        <select class="input100" id="Symptom_3" name="Symptom_3" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;">
+                            <option value="">Select Third Sypmton</option>
+                            <option value="0">Abdominal pain</option>
+                            <option value="1">Altered sensorium</option>
+                            <option value="2">Blackheads</option>
+                            <option value="3">Bladder discomfort</option>
+                            <option value="4">Blurred and distorted vision</option>
+                            <option value="5">Breathlessness</option>
+                            <option value="6">Burning micturition</option>
+                            <option value="7">Chills</option>
+                            <option value="8">Continuous feel of urine</option>
+                            <option value="9">Cough</option>
+                            <option value="10">Dark urine</option>
+                            <option value="11">Dehydration</option>
+                            <option value="12">Diarrhoea</option>
+                            <option value="13">Dischromic patches</option>
+                            <option value="14">Distention of abdomen</option>
+                            <option value="15">Dizziness</option>
+                            <option value="16">Excessive hunger</option>
+                            <option value="17">Extra marital contacts</option>
+                            <option value="18">Family history</option>
+                            <option value="19">Fatigue</option>
+                            <option value="20">Foul smell of urine</option>
+                            <option value="21">Headache</option>
+                            <option value="22">High fever</option>
+                            <option value="23">Hip joint pain</option>
+                            <option value="24">Lack of concentration</option>
+                            <option value="25">Lethargy</option>
+                            <option value="26">Loss of appetite</option>
+                            <option value="27">Loss of balance</option>
+                            <option value="28">Mood swings</option>
+                            <option value="29">Movement stiffness</option>
+                            <option value="30">Nausea</option>
+                            <option value="31">Nodal skin eruptions</option>
+                            <option value="32">Obesity</option>
+                            <option value="33">Painful walking</option>
+                            <option value="34">Prolonged high fever</option>
+                            <option value="35">Pus filled pimples</option>
+                            <option value="36">Red sore around nose</option>
+                            <option value="37">Restlessness</option>
+                            <option value="38">Scurring</option>
+                            <option value="39">Severe headache</option>
+                            <option value="40">Silver like dusting</option>
+                            <option value="41">Small dents in nails</option>
+                            <option value="42">Spinning movements</option>
+                            <option value="43">Stomach pain</option>
+                            <option value="44">Yellow crust ooze</option>
+                            <option value="45">Sweating</option>
+                            <option value="46">Swelling joints</option>
+                            <option value="47">Swelling of stomach</option>
+                            <option value="48">Swollen legs</option>
+                            <option value="49">Ulcers on tongue</option>
+                            <option value="50">Vomiting</option>
+                            <option value="51">Watering from eyes</option>
+                            <option value="52">Weakness of one body side</option>
+                            <option value="53">Weight loss</option>
+                            <option value="54">Yellowing of eyes</option>
+                            <option value="55">Yellowish skin</option>
+                        </select>
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="wrap-input100 ">
+                        <span class="label-input100">Fourth Symptom</span>
+                        <select class="input100" id="Symptom_4" name="Symptom_4" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;">
+                            <option value="">Select Fourth Sypmton</option>
+                            <option value="0">Abdominal pain</option>
+                            <option value="1">Altered sensorium</option>
+                            <option value="2">Blackheads</option>
+                            <option value="3">Bladder discomfort</option>
+                            <option value="4">Blurred and distorted vision</option>
+                            <option value="5">Breathlessness</option>
+                            <option value="6">Burning micturition</option>
+                            <option value="7">Chills</option>
+                            <option value="8">Continuous feel of urine</option>
+                            <option value="9">Continuous sneezing</option>
+                            <option value="10">Cough</option>
+                            <option value="11">Dark urine</option>
+                            <option value="12">Dehydration</option>
+                            <option value="13">Diarrhoea</option>
+                            <option value="14">Dischromic patches</option>
+                            <option value="15">Distention of abdomen</option>
+                            <option value="16">Dizziness</option>
+                            <option value="17">Excessive hunger</option>
+                            <option value="18">Extra marital contacts</option>
+                            <option value="19">Family history</option>
+                            <option value="20">Fatigue</option>
+                            <option value="21">Foul smell of urine</option>
+                            <option value="22">Headache</option>
+                            <option value="23">High fever</option>
+                            <option value="24">Hip joint pain</option>
+                            <option value="25">Irregular sugar level</option>
+                            <option value="26">Itching</option>
+                            <option value="27">Lack of concentration</option>
+                            <option value="28">Lethargy</option>
+                            <option value="29">Loss of appetite</option>
+                            <option value="30">Loss of balance</option>
+                            <option value="31">Mood swings</option>
+                            <option value="32">Movement stiffness</option>
+                            <option value="33">Muscle wasting</option>
+                            <option value="34">Nausea</option>
+                            <option value="35">Nodal skin eruptions</option>
+                            <option value="36">Obesity</option>
+                            <option value="37">Painful walking</option>
+                            <option value="38">Passage of gases</option>
+                            <option value="39">Patches in throat</option>
+                            <option value="40">Prolonged high fever</option>
+                            <option value="41">Pus filled pimples</option>
+                            <option value="42">Red sore around nose</option>
+                            <option value="43">Restlessness</option>
+                            <option value="44">Scurring</option>
+                            <option value="45">Severe headache</option>
+                            <option value="46">Shivering</option>
+                            <option value="47">Silver like dusting</option>
+                            <option value="48">Skin rash</option>
+                            <option value="49">Small dents in nailss</option>
+                            <option value="50">Spinning movements</option>
+                            <option value="51">Spotting urination</option>
+                            <option value="52">Sunken eyes</option>
+                            <option value="53">Sweating</option>
+                            <option value="54">Swelling joints</option>
+                            <option value="55">Swelling of stomach</option>
+                            <option value="56">Swollen legs</option>
+                            <option value="57">Vomiting</option>
+                            <option value="58">Watering from eyes</option>
+                            <option value="59">Weakness of one body side</option>
+                            <option value="60">Weight loss</option>
+                            <option value="61">Yellow crust ooze</option>
+                            <option value="62">Yellowing of eyes</option>
+                            <option value="63">Yellowish skin</option>
+
+                        </select>
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="wrap-input100 ">
+                        <span class="label-input100">Fifth Symptom</span>
+                        <select class="input100" id="Symptom_5" name="Symptom_5" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;">
+                            <option value="">Select Fifth Sypmton</option>
+                            <option value="0">Abdominal pain</option>
+                            <option value="1">Back pain</option>
+                            <option value="2">Blister</option>
+                            <option value="3">Blurred and distorted vision</option>
+                            <option value="4">Breathlessness</option>
+                            <option value="5">Burning micturition</option>
+                            <option value="6">Chest pain</option>
+                            <option value="7">Cough</option>
+                            <option value="8">Dark urine</option>
+                            <option value="9">Diarrhoea</option>
+                            <option value="10">Distention of abdomen</option>
+                            <option value="11">Dizziness</option>
+                            <option value="12">Excessive hunger</option>
+                            <option value="13">Family history</option>
+                            <option value="14">Fatigue</option>
+                            <option value="15">Headache</option>
+                            <option value="16">High fever</option>
+                            <option value="17">History of alcohol consumption</option>
+                            <option value="18">Hives</option>
+                            <option value="19">Irritation</option>
+                            <option value="20">Inflammatory nails</option>
+                            <option value="21">Internal itching</option>
+                            <option value="22">Irregular sugar level</option>
+                            <option value="23">Itching</option>
+                            <option value="24">Lack of concentration</option>
+                            <option value="25">Lethargy</option>
+                            <option value="26">Loss of appetite</option>
+                            <option value="27">Loss of balance</option>
+                            <option value="28">Low blood pressure</option>
+                            <option value="29">Mild confusion</option>
+                            <option value="30">Movement stiffness</option>
+                            <option value="31">Mucoid sputum</option>
+                            <option value="32">Muscle weakness</option>
+                            <option value="33">Nausea</option>
+                            <option value="34">Neck pain</option>
+                            <option value="35">Painful lumps</option>
+                            <option value="36">Painful walking</option>
+                            <option value="37">Passage of gases</option>
+                            <option value="38">Red sore around nose</option>
+                            <option value="39">Skin rash</option>
+                            <option value="40">Small dents in nails</option>
+                            <option value="41">Spotting urination</option>
+                            <option value="42">Stiff neck</option>
+                            <option value="43">Stomach pain</option>
+                            <option value="44">Sweating</option>
+                            <option value="45">Swelling joints</option>
+                            <option value="46">Swollen blood vessels</option>
+                            <option value="47">Swollen legs</option>
+                            <option value="48">Thrush in the mouth</option>
+                            <option value="49">Unsteadiness</option>
+                            <option value="50">Urine that is reddish in color</option>
+                            <option value="51">Weakness in limbs</option>
+                            <option value="52">Yellow crust ooze</option>
+                            <option value="53">Yellowing of eyes</option>
+                            <option value="54">Yellowish skin</option>
+                        </select>
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="wrap-input100 ">
+                        <span class="label-input100">Sixth Symptom</span>
+                        <select class="input100" id="Symptom_6" name="Symptom_6" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;">
+                            <option value="">Select Sixth Sypmton</option>
+                            <option value="0">Abdominal pain</option>
+                            <option value="1">Acidity</option>
+                            <option value="2">Blurred and distorted vision</option>
+                            <option value="3">Breathlessness</option>
+                            <option value="4">Chest pain</option>
+                            <option value="5">Constipation</option>
+                            <option value="6">Cough</option>
+                            <option value="7">Dark urine</option>
+                            <option value="8">Depression</option>
+                            <option value="9">Diarrhoea</option>
+                            <option value="10">Difficulty walking</option>
+                            <option value="11">Dizziness</option>
+                            <option value="12">Dry mouth and skin</option>
+                            <option value="13">Family history</option>
+                            <option value="14">Fast heart rate</option>
+                            <option value="15">Fatigue</option>
+                            <option value="16">Fluid overload</option>
+                            <option value="17">Headache</option>
+                            <option value="18">High fever</option>
+                            <option value="19">Hip joint pain</option>
+                            <option value="20">History of alcohol consumption</option>
+                            <option value="21">Increased heat in the joint</option>
+                            <option value="22">Indigestion</option>
+                            <option value="23">Inflammatory nails</option>
+                            <option value="24">Internal itching</option>
+                            <option value="25">Joint pain</option>
+                            <option value="26">Knee pain</option>
+                            <option value="27">Loss of appetite</option>
+                            <option value="28">Loss of balance</option>
+                            <option value="29">Malaise</option>
+                            <option value="30">Mucoid sputum</option>
+                            <option value="31">Nausea</option>
+                            <option value="32">Neck pain</option>
+                            <option value="33">Nausea</option>
+                            <option value="34">Neck pain</option>
+                            <option value="35">Obesity</option>
+                            <option value="36">Pain under the ribs</option>
+                            <option value="37">Painful walking</option>
+                            <option value="38">Passage of gases</option>
+                            <option value="39">Prickling sensation</option>
+                            <option value="40">Prominent veins on calf</option>
+                            <option value="41">Puffy face and eyes</option>
+                            <option value="42">Ring-shaped redness</option>
+                            <option value="43">Silver like dusting</option>
+                            <option value="44">Skin peeling</option>
+                            <option value="45">Skin rash</option>
+                            <option value="46">Small dents in nails</option>
+                            <option value="47">Sneeze</option>
+                            <option value="48">Solid lumps</option>
+                            <option value="49">Spinning movements</option>
+                            <option value="50">Stiff neck</option>
+                            <option value="51">Stomach pain</option>
+                            <option value="52">Sweating</option>
+                            <option value="53">Swelling joints</option>
+                            <option value="54">Swelling of the lymph nodes</option>
+                            <option value="55">Swollen blood vessels</option>
+                            <option value="56">Tinnitus</option>
+                            <option value="57">Ulcers on tongue</option>
+                            <option value="58">Unsteadiness</option>
+                            <option value="59">Urticaria</option>
+                            <option value="60">Vomiting</option>
+                            <option value="61">Yellowing of eyes</option>
+                            <option value="62">Yellowish skin</option>
+
+                        </select>
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="wrap-input100 ">
+                        <span class="label-input100">Seventh Symptom</span>
+                        <select class="input100" id="Symptom_7" name="Symptom_7" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;">
+                            <option value="">Select Seventh Sypmton</option>
+                            <option value="0">0.0</option>
+                            <option value="1">Abdominal pain</option>
+                            <option value="2">Anorexia</option>
+                            <option value="3">Blurred and distorted vision</option>
+                            <option value="4">Blurred or double vision</option>
+                            <option value="5">Blurred vision</option>
+                            <option value="6">Breathlessness</option>
+                            <option value="7">Bruising</option>
+                            <option value="8">Cold sores</option>
+                            <option value="9">Constipation</option>
+                            <option value="10">Cramps</option>
+                            <option value="11">Dark urine</option>
+                            <option value="12">Depression</option>
+                            <option value="13">Diarrohea</option>
+                            <option value="14">Difficulty breathing</option>
+                            <option value="15">Distention of abdomen</option>
+                            <option value="16">Enlarged of abdomen</option>
+                            <option value="17">Enlarged thyroid</option>
+                            <option value="18">Excessive hunger</option>
+                            <option value="19">Fast heart rate</option>
+                            <option value="20">Fatigue</option>
+                            <option value="21">Fever</option>
+                            <option value="22">Fluid overload</option>
+                            <option value="23">Headache</option>
+                            <option value="24">History of alcohol consumption</option>
+                            <option value="25">Irritability</option>
+                            <option value="26">Itching</option>
+                            <option value="27">Lesions different from skin</option>
+                            <option value="28">Loss of appetite</option>
+                            <option value="29">Loss of joint function</option>
+                            <option value="30">Malaise</option>
+                            <option value="31">Mild fever</option>
+                            <option value="32">Muscle pain</option>
+                            <option value="33">Nausea</option>
+                            <option value="34">Obesity</option>
+                            <option value="35">Pain near ribs</option>
+                            <option value="36">Phlegm</option>
+                            <option value="37">Prominent veins on calf</option>
+                            <option value="38">Relief that comes with vomiting</option>
+                            <option value="39">Scaling in the knee and elbow areas</option>
+                            <option value="40">Severe attacks</option>
+                            <option value="41">Small red tender bumps</option>
+                            <option value="42">Small red-pink spots</option>
+                            <option value="40">Souring in stomach</option>
+                            <option value="41">Squeaking sounds</option>
+                            <option value="42">Sweating</option>
+                            <option value="43">Swelling of stomach</option>
+                            <option value="44">Swollen blood vessels</option>
+                            <option value="45">Swollen lengs</option>
+                            <option value="46">Tingling in the limbs</option>
+                            <option value="47">Vomiting</option>
+                            <option value="48">Wheezing</option>
+                            <option value="49">Yellow urine</option>
+                            <option value="50">Yellowing of eyes</option>
+                            <option value="51">Yellowish skin</option>
+
+                        </select>
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="wrap-input100 ">
+                        <span class="label-input100">Eighth symptom</span>
+                        <select class="input100" id="Symptom_8" name="Symptom_8" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;">
+                            <option value="">Select Eighth Sypmton</option>
+                            <option value="0">0.0</option>
+                            <option value="1">Abdominal pain</option>
+                            <option value="2">Appetite and weight loss</option>
+                            <option value="3">Bad breath</option>
+                            <option value="4">Brittle nails</option>
+                            <option value="5">Chest pain</option>
+                            <option value="6">Chills</option>
+                            <option value="7">Cystic lesions</option>
+                            <option value="8">Dark urine</option>
+                            <option value="9">Diarrhoea</option>
+                            <option value="10">Difficulty swallowing</option>
+                            <option value="11">Dry skin</option>
+                            <option value="12">Drying and tingling lips</option>
+                            <option value="13">Excessive hunger</option>
+                            <option value="14">Excessive thirst</option>
+                            <option value="15">Fatigue</option>
+                            <option value="16">Flu-like symptoms</option>
+                            <option value="17">Frequent urination</option>
+                            <option value="18">Headache</option>
+                            <option value="19">High fever</option>
+                            <option value="20">Itching sensation</option>
+                            <option value="21">Increased appetite</option>
+                            <option value="22">Irritability</option>
+                            <option value="23">Itching</option>
+                            <option value="24">Loss of appetite</option>
+                            <option value="25">Loss of coordination</option>
+                            <option value="26">Loss of elasticity</option>
+                            <option value="27">Loss blood pressure</option>
+                            <option value="28">Lung diseases</option>
+                            <option value="29">Mild fever</option>
+                            <option value="30">Muscle pain</option>
+                            <option value="31">Muscle weakness</option>
+                            <option value="32">Nausea</option>
+                            <option value="33">Pain and tenderness</option>
+                            <option value="34">Phlegm</option>
+                            <option value="35">Rash</option>
+                            <option value="36">Staggers</option>
+                            <option value="37">Sweating</option>
+                            <option value="38">Swelled lymph nodes</option>
+                            <option value="39">Urinating a small amount</option>
+                            <option value="40">Visual disturbances</option>
+                            <option value="41">Vomiting</option>
+                            <option value="42">Weight loss</option>
+                            <option value="43">Whistling sound as you breathe</option>
+                            <option value="44">Yellowing of eyes</option>
+                            <option value="45">Yellowish skin</option>
+
+
+                        </select>
+                        <span class="focus-input100"></span>
+                    </div>
+                    <div class="wrap-input100 ">
+                        <span class="label-input100">Ninth Symptom</span>
+                        <select class="input100" id="Symptom_9" name="Symptom_9" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;">
+                            <option value="">Select Ninth Sypmton</option>
+                            <option value="0">0.0</option>
+                            <option value="1">Abdominal pain</option>
+                            <option value="2">Acidity</option>
+                            <option value="3">Blurred and distorted vision</option>
+                            <option value="4">Chest pain</option>
+                            <option value="5">Chest pressure with pain</option>
+                            <option value="6">Constipation</option>
+                            <option value="7">Cough</option>
+                            <option value="8">Dark urine color</option>
+                            <option value="9">Depression</option>
+                            <option value="10">Diarrhoea</option>
+                            <option value="11">Excessive hunger</option>
+                            <option value="12">Fast heart rate</option>
+                            <option value="13">Fatigue</option>
+                            <option value="14">Feeling of heaviness in the legs</option>
+                            <option value="15">Headache</option>
+                            <option value="16">Increased appetite</option>
+                            <option value="17">Indigestion</option>
+                            <option value="18">Irritability</option>
+                            <option value="19">Itching and bleeding</option>
+                            <option value="20">Joint pain</option>
+                            <option value="21">Loss of strength</option>
+                            <option value="22">Malaise</option>
+                            <option value="23">Mild fever</option>
+                            <option value="24">Nausea</option>
+                            <option value="25">Pain behind the eyes</option>
+                            <option value="26">Polyuria</option>
+                            <option value="27">Shivering</option>
+                            <option value="28">Sickness that occurs often</option>
+                            <option value="29">Slurred speech</option>
+                            <option value="30">Stiff neck</option>
+                            <option value="31">Stifness</option>
+                            <option value="32">Stinging sensation</option>
+                            <option value="33">Stomach after nourishment</option>
+                            <option value="34">Swollen extremeties</option>
+                            <option value="35">Tense neck with hard pain</option>
+                            <option value="36">Toxic look (typhos)</option>
+                            <option value="37">Visual disturbances</option>
+                            <option value="38">Vomiting</option>
+                            <option value="39">Weakness accomponied by icterus</option>
+                            <option value="40">Yellowing of eyes</option>
+                            <option value="41">Yellowish skin</option>
+                            <option value="42">Yellowness on eyes</option>
+
+                        </select>
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="wrap-input100 ">
+                        <span class="label-input100">Tenth Symptom</span>
+                        <select class="input100" id="Symptom_10" name="Symptom_10" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;">
+                            <option value="">Select Tenth Sypmton</option>
+                            <option value="0">0.0</option>
+                            <option value="1">Abnormal Menstruation</option>
+                            <option value="2">Acute Liver Failure</option>
+                            <option value="3">Back Pain</option>
+                            <option value="4">Belly Pain</option>
+                            <option value="5">Blurred And Distorted Vision</option>
+                            <option value="6">Depression</option>
+                            <option value="7">Earring</option>
+                            <option value="8">Excessive Hunger</option>
+                            <option value="9">Fast Heart Rate</option>
+                            <option value="10">Fatigue</option>
+                            <option value="11">Fever with a week Duration</option>
+                            <option value="12">Irregular Sugar Level</option>
+                            <option value="13">Irritability</option>
+                            <option value="14">Lethargy</option>
+                            <option value="15">Malaise</option>
+                            <option value="16">Muscle Pain</option>
+                            <option value="17">Obesity</option>
+                            <option value="18">Pain Behind The Eyes</option>
+                            <option value="19">Phlegm</option>
+                            <option value="20">Polyuria</option>
+                            <option value="21">Receiving Blood Transfusion</option>
+                            <option value="22">Red Spots Over Body</option>
+                            <option value="23">Restlessness</option>
+                            <option value="24">Rusty Sputum</option>
+                            <option value="25">Toxic Look(Typhos)</option>
+                            <option value="26">Weight Loss</option>
+                            <option value="27">Yellowing of Eyes</option>
+                        </select>
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="wrap-input100 ">
+                        <span class="label-input100">Eleventh Symptom</span>
+                        <select class="input100" id="Symptom_11" name="Symptom_11" style="padding: 10px 5px;margin-top: 15px;border: 2px solid #d9d9d9;">
+                            <option value="">Select Eleventh Sypmton</option>
+                            <option value="0">0.0</option>
+                            <option value="1">Abdominal pain</option>
+                            <option value="2">Abnormal menstruation</option>
+                            <option value="3">Back pain</option>
+                            <option value="4">Belly pain</option>
+                            <option value="5">Chest pain</option>
+                            <option value="6">Coma</option>
+                            <option value="7">Constipation</option>
+                            <option value="8">Dark urine</option>
+                            <option value="9">Diarrhoea</option>
+                            <option value="10">Headache</option>
+                            <option value="11">High discomfort in low temperatures</option>
+                            <option value="12">Irritability</option>
+                            <option value="13">Joint pain</option>
+                            <option value="14">Loss of appetite</option>
+                            <option value="15">Malaise</option>
+                            <option value="16">Muscle pain</option>
+                            <option value="17">Nausea</option>
+                            <option value="18">Palpitations</option>
+                            <option value="19">Receiving unsterile injections</option>
+                            <option value="20">Stomach bleeding</option>
+                            <option value="21">Toxic look (typhos)</option>
+                            <option value="22">Vomiting</option>
+                            <option value="23">Yellowish skin</option>
+
+                        </select>
+                        <span class="focus-input100"></span>
+                    </div>
+
+
+                    <div class="container-contact100-form-btn">
+                        <div class="wrap-contact100-form-btn">
+                            <div class="contact100-form-bgbtn"></div>
+                            <button class="contact100-form-btn" id='submit' type="submit" value="Submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+      
+        
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script type="text/javascript">
+        $('#submit').click(function (event) {
+            event.preventDefault();
+            var exist_response = $.ajax({ type: "GET", url: "https://heroku-diagnosis.herokuapp.com/predict", data: "Symptom_1=" + $('#Symptom_1').val() + "&Symptom_2=" + $('#Symptom_2').val() +
+                "&Symptom_3=" + $('#Symptom_3').val() + "&Symptom_4=" + $('#Symptom_4').val() + "&Symptom_5=" + $('#Symptom_5').val() + "&Symptom_6=" +
+                $('#Symptom_6').val() + "&Symptom_7=" + $('#Symptom_7').val() + "&Symptom_8=" + $('#Symptom_8').val() + "&Symptom_9=" + $('#Symptom_9').val() + "&Symptom_10=" + $('#Symptom_10').val() +
+                "&Symptom_11=" + $('#Symptom_11').val()});
+            $('#title').html(exist_response);
+        });
+            </script>
+    </main>
+    <div class="footer2" >
+
+
+
+
+        <!-- ======= Footer ======= -->
+        <footer >
+
+
+
+            <div class="container d-md-flex py-4">
+
+                <div class="me-md-auto text-center text-md-start">
+                    <div class="copyright">
+                        &copy; Copyright <strong><span>Diagnosis</span></strong>. All Rights Reserved
+                    </div>
+
+                </div>
+
+            </div>
+        </footer>
+        <!-- End Footer -->
+    </div>
+
+
+
+
+
+
+    <!-- Vendor JS Files -->
+    <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/assets/vendor/php-email-form/validate.js"></script>
+    <script src="~/assets/vendor/purecounter/purecounter.js"></script>
+    <script src="~/assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/assets/js/main.js"></script>
+</body>
+
+
+
+</html>
+

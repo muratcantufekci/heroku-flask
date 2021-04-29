@@ -32,7 +32,7 @@ def predict():
                                        request.args['Symptom_9'],
                                        request.args['Symptom_10'],
                                        request.args['Symptom_11']]]) 
-    return str(diagnosis_predict)
+    return (index.html)
 
 if __name__ == '__main__':
     app.run(debug=True)
