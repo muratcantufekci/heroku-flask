@@ -47,7 +47,7 @@ def home():
                                        request.args['Symptom_8'],
                                        request.args['Symptom_9'],
                                        request.args['Symptom_10'],
-                                       request.args['Symptom_11']]] #Hastanın girdiği semptomlar sırası ile burada depolanacak, sonra önlem olarak ravel da edilecek ve model.predictin içine gönderilecek örnek:model.predict([symptoms_input]).
+                                       request.args['Symptom_11']]] 
     diagnosis_predict = model.predict([symptoms_input]) 
     
     dis = diagnosis_predict[0]
