@@ -38,17 +38,18 @@ def home():
 def predict():    
     list = ['(vertigo) Paroymsal  Positional Vertigo', 'AIDS' ,'Acne', 'Alcoholic hepatitis' ,'Allergy', 'Arthritis', 'Bronchial Asthma','Cervical spondylosis', 'Chicken pox' ,'Chronic cholestasis' ,'Dengue','Diabetes' ,'Drug Reaction', 'Fungal infection' ,'GERD', 'Gastroenteritis','Hepatitis B' ,'Hepatitis C' ,'Hepatitis D', 'Hepatitis E' ,'Hypertension','Hyperthyroidism' ,'Hypoglycemia' ,'Hypothyroidism' ,'Impetigo' ,'Jaundice','Malaria', 'Migraine' ,'Osteoarthristis', 'Paralysis (brain hemorrhage)','Peptic ulcer diseae' ,'Pneumonia', 'Psoriasis', 'Tuberculosis' ,'Typhoid''Urinary tract infection', 'Varicose veins' ,'hepatitis A']
     symptoms_input = [[request.args['Symptom_1'],
-                                       request.args['Symptom_2'],
-                                       request.args['Symptom_3'],
-                                       request.args['Symptom_4'],
-                                       request.args['Symptom_5'],
-                                       request.args['Symptom_6'],
-                                       request.args['Symptom_7'],
-                                       request.args['Symptom_8'],
-                                       request.args['Symptom_9'],
-                                       request.args['Symptom_10'],
-                                       request.args['Symptom_11']]] 
-    diagnosis_predict = model.predict([symptoms_input]) 
+                       request.args['Symptom_2'],
+                       request.args['Symptom_3'],
+                       request.args['Symptom_4'],
+                       request.args['Symptom_5'],
+                       request.args['Symptom_6'],
+                       request.args['Symptom_7'],
+                       request.args['Symptom_8'],
+                       request.args['Symptom_9'],
+                       request.args['Symptom_10'],
+                       request.args['Symptom_11']]]
+    
+    diagnosis_predict = model.predict([symptoms_input])
     
     dis = diagnosis_predict[0]
     
