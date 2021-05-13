@@ -3,3 +3,4 @@ gunicorn
 numpy
 sklearn
 flask-cors
+pandas
