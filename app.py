@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[3]:
+# In[1]:
 
 
 import numpy as np
@@ -11,25 +11,26 @@ from sklearn.model_selection import train_test_split
 import pickle
 from sklearn.metrics import confusion_matrix
 from flask_cors import CORS, cross_origin
+
+
+# In[2]:
+
+
 app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
-model = pickle.load(open('diagnosis.pkl', 'rb')
+model = pickle.load(open('diagnosis.pkl', 'rb'))
 y = pickle.load(open('y_df.pkl', 'rb'))
 X = pickle.load(open('X_df.pkl', 'rb'))
-@app.route('/')
-@cross_origin()
-def home():
-    
-        return '<h1> API server is working </h1>'
-    
 
-@app.route('/predict')
-@cross_origin()
-def predict():
+
+# In[3]:
+
+
+@app.route('/')
+def home():    
     list = ['(vertigo) Paroymsal  Positional Vertigo', 'AIDS' ,'Acne', 'Alcoholic hepatitis' ,'Allergy', 'Arthritis', 'Bronchial Asthma','Cervical spondylosis', 'Chicken pox' ,'Chronic cholestasis' ,'Dengue','Diabetes' ,'Drug Reaction', 'Fungal infection' ,'GERD', 'Gastroenteritis','Hepatitis B' ,'Hepatitis C' ,'Hepatitis D', 'Hepatitis E' ,'Hypertension','Hyperthyroidism' ,'Hypoglycemia' ,'Hypothyroidism' ,'Impetigo' ,'Jaundice','Malaria', 'Migraine' ,'Osteoarthristis', 'Paralysis (brain hemorrhage)','Peptic ulcer diseae' ,'Pneumonia', 'Psoriasis', 'Tuberculosis' ,'Typhoid''Urinary tract infection', 'Varicose veins' ,'hepatitis A']
-    
-    diagnosis_predict= model.predict([[request.args['Symptom_1'],
+    symptoms_input = [[request.args['Symptom_1'],
                                        request.args['Symptom_2'],
                                        request.args['Symptom_3'],
                                        request.args['Symptom_4'],
@@ -39,7 +40,8 @@ def predict():
                                        request.args['Symptom_8'],
                                        request.args['Symptom_9'],
                                        request.args['Symptom_10'],
-                                       request.args['Symptom_11']]])  
+                                       request.args['Symptom_11']]] #Hastanın girdiği semptomlar sırası ile burada depolanacak, sonra önlem olarak ravel da edilecek ve model.predictin içine gönderilecek örnek:model.predict([symptoms_input]).
+    diagnosis_predict = model.predict([symptoms_input]) 
     
     dis = diagnosis_predict[0]
     
@@ -98,15 +100,19 @@ def predict():
     diseasepredict=list[diseasep]
     
     
-    
     return str("Your disease has been predicted as: " + diseasepredict + " with the accuarcy of " + Accuracy+"%")
-                    
-    
-    
 
-if __name__ == '__main__':
-    app.run(debug=True)
-    
+
+# In[ ]:
+
+
+app.run()
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:
