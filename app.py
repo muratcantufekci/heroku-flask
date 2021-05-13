@@ -109,11 +109,14 @@ def predict():
     
     return str("Your disease has been predicted as: " + diseasepredict + " with the accuarcy of " + Accuracy+"%")
 
+if __name__ == '__main__':
+    app.run(debug=True)
+
 
 # In[ ]:
 
 
-app.run()
+
 
 
 # In[ ]:
