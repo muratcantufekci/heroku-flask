@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[5]:
 
 
 import numpy as np
@@ -13,7 +13,7 @@ from sklearn.metrics import confusion_matrix
 from flask_cors import CORS, cross_origin
 
 
-# In[2]:
+# In[6]:
 
 
 app = Flask(__name__)
@@ -24,7 +24,7 @@ y = pickle.load(open('y_df.pkl', 'rb'))
 X = pickle.load(open('X_df.pkl', 'rb'))
 
 
-# In[3]:
+# In[7]:
 
 
 @app.route('/')
@@ -58,7 +58,7 @@ def predict():
             'hepatitis A']
     
     
-    parameters = parameters
+    
     diagnosis_predict = model.predict([parameters])
     dis = diagnosis_predict[0]
     
