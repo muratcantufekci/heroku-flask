@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
+# In[1]:
 
 
 import numpy as np
@@ -13,7 +13,7 @@ from sklearn.metrics import confusion_matrix
 from flask_cors import CORS, cross_origin
 
 
-# In[4]:
+# In[2]:
 
 
 app = Flask(__name__)
@@ -24,26 +24,7 @@ y = pickle.load(open('y_df.pkl', 'rb'))
 X = pickle.load(open('X_df.pkl', 'rb'))
 
 
-# In[ ]:
-
-
-def getParameters():
-    parameters = []
-    parameters.append(Flask.request.args.get('Symptom_1'))
-    parameters.append(Flask.request.args.get('Symptom_2'))
-    parameters.append(Flask.request.args.get('Symptom_3'))
-    parameters.append(Flask.request.args.get('Symptom_4'))
-    parameters.append(Flask.request.args.get('Symptom_5'))
-    parameters.append(Flask.request.args.get('Symptom_6'))
-    parameters.append(Flask.request.args.get('Symptom_7'))
-    parameters.append(Flask.request.args.get('Symptom_8'))
-    parameters.append(Flask.request.args.get('Symptom_9'))
-    parameters.append(Flask.request.args.get('Symptom_10'))
-    parameters.append(Flask.request.args.get('Symptom_11'))
-    return parameters
-
-
-# In[ ]:
+# In[3]:
 
 
 @app.route('/')
@@ -51,21 +32,34 @@ def getParameters():
 def home():
     
         return '<h1> API server is working </h1>'
-
-@app.route('/predict')
+    
+@app.route('/predict', methods = ['GET'])
 @cross_origin()
-def predict(): 
-    list = ['(vertigo) Paroymsal  Positional Vertigo', 'AIDS' ,'Acne', 'Alcoholic hepatitis',
-            'Allergy', 'Arthritis', 'Bronchial Asthma','Cervical spondylosis', 
-            'Chicken pox' ,'Chronic cholestasis' ,'Dengue','Diabetes' ,'Drug Reaction', 
-            'Fungal infection' ,'GERD', 'Gastroenteritis','Hepatitis B' ,'Hepatitis C' ,
-            'Hepatitis D', 'Hepatitis E' ,'Hypertension','Hyperthyroidism' ,'Hypoglycemia' ,
-            'Hypothyroidism' ,'Impetigo' ,'Jaundice','Malaria', 'Migraine' ,'Osteoarthristis', 
-            'Paralysis (brain hemorrhage)','Peptic ulcer diseae' ,'Pneumonia', 'Psoriasis', 'Tuberculosis' ,
-            'Typhoid''Urinary tract infection', 'Varicose veins' ,'hepatitis A']
-    X_input = getParameters()
-    inputFeature = np.asarray(X_input).reshape(-1)
-    diagnosis_predict = model.predict([inputFeature])[0]
+def predict():
+    parameters = []
+    parameters.append(flask.request.args.get('Symptom_1'))
+    parameters.append(flask.request.args.get('Symptom_2'))
+    parameters.append(flask.request.args.get('Symptom_3'))
+    parameters.append(flask.request.args.get('Symptom_4'))
+    parameters.append(flask.request.args.get('Symptom_5'))
+    parameters.append(flask.request.args.get('Symptom_6'))
+    parameters.append(flask.request.args.get('Symptom_7'))
+    parameters.append(flask.request.args.get('Symptom_8'))
+    parameters.append(flask.request.args.get('Symptom_9'))
+    parameters.append(flask.request.args.get('Symptom_10'))
+    parameters.append(flask.request.args.get('Symptom_11'))
+    
+    list = ['(vertigo) Paroymsal  Positional Vertigo', 'AIDS' ,'Acne', 'Alcoholic hepatitis' ,'Allergy', 
+            'Arthritis', 'Bronchial Asthma','Cervical spondylosis', 'Chicken pox' ,'Chronic cholestasis' ,
+            'Dengue','Diabetes' ,'Drug Reaction', 'Fungal infection' ,'GERD', 'Gastroenteritis','Hepatitis B' ,
+            'Hepatitis C' ,'Hepatitis D', 'Hepatitis E' ,'Hypertension','Hyperthyroidism' ,'Hypoglycemia' ,
+            'Hypothyroidism' ,'Impetigo' ,'Jaundice','Malaria', 'Migraine' ,'Osteoarthristis', 'Paralysis (brain hemorrhage)',
+            'Peptic ulcer diseae' ,'Pneumonia', 'Psoriasis', 'Tuberculosis' ,'Typhoid''Urinary tract infection', 'Varicose veins' ,
+            'hepatitis A']
+    
+    
+    parameters = parameters
+    diagnosis_predict = model.predict([parameters])
     dis = diagnosis_predict[0]
     
     arry = y.iloc[0:276].values
@@ -77,15 +71,14 @@ def predict():
             idx.append(i)
             j += 1
     X_testing = X.loc[int(idx[0]):int(idx[j-1])]
-
-    
+    X_input = np.asarray(parameters).reshape(1, 11)
     acc_list=[]
     i = 0
     i = int(i)
 
     while i < j:
 
-        matrix = confusion_matrix(X_testing.iloc[i], inputFeature)
+        matrix = confusion_matrix(X_testing.iloc[i], X_input)
         matrix
     
         diag = matrix.diagonal()
@@ -126,18 +119,6 @@ def predict():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
 
 # In[ ]:
