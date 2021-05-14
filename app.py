@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[4]:
+# In[2]:
 
 
 import numpy as np
@@ -13,7 +13,7 @@ from sklearn.metrics import confusion_matrix
 from flask_cors import CORS, cross_origin
 
 
-# In[5]:
+# In[4]:
 
 
 app = Flask(__name__)
@@ -24,7 +24,7 @@ y = pickle.load(open('y_df.pkl', 'rb'))
 X = pickle.load(open('X_df.pkl', 'rb'))
 
 
-# In[6]:
+# In[ ]:
 
 
 def getParameters():
@@ -43,7 +43,7 @@ def getParameters():
     return parameters
 
 
-# In[7]:
+# In[ ]:
 
 
 @app.route('/')
@@ -54,10 +54,18 @@ def home():
 
 @app.route('/predict')
 @cross_origin()
-def predict():    
-    list = ['(vertigo) Paroymsal  Positional Vertigo', 'AIDS' ,'Acne', 'Alcoholic hepatitis' ,'Allergy', 'Arthritis', 'Bronchial Asthma','Cervical spondylosis', 'Chicken pox' ,'Chronic cholestasis' ,'Dengue','Diabetes' ,'Drug Reaction', 'Fungal infection' ,'GERD', 'Gastroenteritis','Hepatitis B' ,'Hepatitis C' ,'Hepatitis D', 'Hepatitis E' ,'Hypertension','Hyperthyroidism' ,'Hypoglycemia' ,'Hypothyroidism' ,'Impetigo' ,'Jaundice','Malaria', 'Migraine' ,'Osteoarthristis', 'Paralysis (brain hemorrhage)','Peptic ulcer diseae' ,'Pneumonia', 'Psoriasis', 'Tuberculosis' ,'Typhoid''Urinary tract infection', 'Varicose veins' ,'hepatitis A']
-    parameters = getParameters()
-    diagnosis_predict = model.predict([parameters])
+def predict(): 
+    list = ['(vertigo) Paroymsal  Positional Vertigo', 'AIDS' ,'Acne', 'Alcoholic hepatitis',
+            'Allergy', 'Arthritis', 'Bronchial Asthma','Cervical spondylosis', 
+            'Chicken pox' ,'Chronic cholestasis' ,'Dengue','Diabetes' ,'Drug Reaction', 
+            'Fungal infection' ,'GERD', 'Gastroenteritis','Hepatitis B' ,'Hepatitis C' ,
+            'Hepatitis D', 'Hepatitis E' ,'Hypertension','Hyperthyroidism' ,'Hypoglycemia' ,
+            'Hypothyroidism' ,'Impetigo' ,'Jaundice','Malaria', 'Migraine' ,'Osteoarthristis', 
+            'Paralysis (brain hemorrhage)','Peptic ulcer diseae' ,'Pneumonia', 'Psoriasis', 'Tuberculosis' ,
+            'Typhoid''Urinary tract infection', 'Varicose veins' ,'hepatitis A']
+    X_input = getParameters()
+    inputFeature = np.asarray(X_input).reshape(-1)
+    diagnosis_predict = model.predict([inputFeature])[0]
     dis = diagnosis_predict[0]
     
     arry = y.iloc[0:276].values
@@ -69,7 +77,7 @@ def predict():
             idx.append(i)
             j += 1
     X_testing = X.loc[int(idx[0]):int(idx[j-1])]
-    X_input = parameters
+
     
     acc_list=[]
     i = 0
@@ -77,7 +85,7 @@ def predict():
 
     while i < j:
 
-        matrix = confusion_matrix(X_testing.iloc[i], X_input)
+        matrix = confusion_matrix(X_testing.iloc[i], inputFeature)
         matrix
     
         diag = matrix.diagonal()
@@ -118,6 +126,18 @@ def predict():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:
