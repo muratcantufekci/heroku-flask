@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[4]:
 
 
 import numpy as np
@@ -13,7 +13,7 @@ from sklearn.metrics import confusion_matrix
 from flask_cors import CORS, cross_origin
 
 
-# In[2]:
+# In[5]:
 
 
 app = Flask(__name__)
@@ -24,7 +24,26 @@ y = pickle.load(open('y_df.pkl', 'rb'))
 X = pickle.load(open('X_df.pkl', 'rb'))
 
 
-# In[3]:
+# In[6]:
+
+
+def getParameters():
+    parameters = []
+    parameters.append(Flask.request.args.get('Symptom_1'))
+    parameters.append(Flask.request.args.get('Symptom_2'))
+    parameters.append(Flask.request.args.get('Symptom_3'))
+    parameters.append(Flask.request.args.get('Symptom_4'))
+    parameters.append(Flask.request.args.get('Symptom_5'))
+    parameters.append(Flask.request.args.get('Symptom_6'))
+    parameters.append(Flask.request.args.get('Symptom_7'))
+    parameters.append(Flask.request.args.get('Symptom_8'))
+    parameters.append(Flask.request.args.get('Symptom_9'))
+    parameters.append(Flask.request.args.get('Symptom_10'))
+    parameters.append(Flask.request.args.get('Symptom_11'))
+    return parameters
+
+
+# In[7]:
 
 
 @app.route('/')
@@ -37,20 +56,8 @@ def home():
 @cross_origin()
 def predict():    
     list = ['(vertigo) Paroymsal  Positional Vertigo', 'AIDS' ,'Acne', 'Alcoholic hepatitis' ,'Allergy', 'Arthritis', 'Bronchial Asthma','Cervical spondylosis', 'Chicken pox' ,'Chronic cholestasis' ,'Dengue','Diabetes' ,'Drug Reaction', 'Fungal infection' ,'GERD', 'Gastroenteritis','Hepatitis B' ,'Hepatitis C' ,'Hepatitis D', 'Hepatitis E' ,'Hypertension','Hyperthyroidism' ,'Hypoglycemia' ,'Hypothyroidism' ,'Impetigo' ,'Jaundice','Malaria', 'Migraine' ,'Osteoarthristis', 'Paralysis (brain hemorrhage)','Peptic ulcer diseae' ,'Pneumonia', 'Psoriasis', 'Tuberculosis' ,'Typhoid''Urinary tract infection', 'Varicose veins' ,'hepatitis A']
-    request.args.get['Symptom_1']=Symptom_1
-    request.args.get['Symptom_2']=Symptom_2
-    request.args.get['Symptom_3']=Symptom_3
-    request.args.get['Symptom_4']=Symptom_4
-    request.args.get['Symptom_5']=Symptom_5
-    request.args.get['Symptom_6']=Symptom_6
-    request.args.get['Symptom_7']=Symptom_7
-    request.args.get['Symptom_8']=Symptom_8
-    request.args.get['Symptom_9']=Symptom_9
-    request.args.get['Symptom_10']=Symptom_10
-    request.args.get['Symptom_11']=Symptom_11
-    
-    diagnosis_predict = model.predict([Symptom_1,Symptom_2,Symptom_3,Symptom_4,Symptom_5,Symptom_6,Symptom_7,Symptom_8,Symptom_9,Symptom_10,Symptom_11])
-    symptoms_input=[Symptom_1,Symptom_2,Symptom_3,Symptom_4,Symptom_5,Symptom_6,Symptom_7,Symptom_8,Symptom_9,Symptom_10,Symptom_11]
+    parameters = getParameters()
+    diagnosis_predict = model.predict([parameters])
     dis = diagnosis_predict[0]
     
     arry = y.iloc[0:276].values
@@ -62,8 +69,7 @@ def predict():
             idx.append(i)
             j += 1
     X_testing = X.loc[int(idx[0]):int(idx[j-1])]
-    
-    X_input = symptoms_input
+    X_input = parameters
     
     acc_list=[]
     i = 0
@@ -112,12 +118,6 @@ def predict():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-# In[ ]:
-
-
-
 
 
 # In[ ]:
