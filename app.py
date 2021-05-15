@@ -122,7 +122,7 @@ def predict():
     diseasepredict=list[diseasep]
     
     
-    return str("Your disease has been predicted as: " + diseasepredict + " with the accuarcy of " + Accuracy+"%")
+    return str(diseasepredict + " " + Accuracy)
 
 
 if __name__ == '__main__':
