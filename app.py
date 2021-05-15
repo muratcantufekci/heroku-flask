@@ -110,20 +110,21 @@ def predict():
     Accuracy = max(acc_list_int)
     if Accuracy == 100:
         Accuracy = Accuracy - 0.1
-        print("Accuracy of your predicted disease is: %.2f%%" % Accuracy)
+        Accuracy = str(Accuracy)
+        diseasep = diagnosis_predict[0]
+        diseasepredict=list[diseasep]
+        return str( diseasepredict+ " " +Accuracy + " % Your symptoms are compatible please make an appointment.")
     if Accuracy == 0: 
-        print("Your symptoms were irrelevant beyond compare and we cannot offer you a disease prediction with these inputs.")
+        Accuracy = str(Accuracy)
+        diseasep = diagnosis_predict[0]
+        diseasepredict=list[diseasep]        
+        return str( diseasepredict+ " " +Accuracy +" % Your symptoms were irrelevant beyond compare and we cannot offer you a disease prediction with these inputs." )
     else :
-        print("Probably due to your irrelevant symptom inputs, you had a low accuracy.\nWe recommend you to try again with more logical symptoms or contact your MD physically.")
+        Accuracy = str(Accuracy)
+        diseasep = diagnosis_predict[0]
+        diseasepredict=list[diseasep]
+        return str( diseasepredict +" " + Accuracy + "% Probably due to your irrelevant symptom inputs, you had a low accuracy.\nWe recommend you to try again with more logical symptoms or contact your MD physically.")
         
-    
-    Accuracy = str(Accuracy)
-    diseasep = diagnosis_predict[0]
-    diseasepredict=list[diseasep]
-    
-    
-    return str(diseasepredict + " " + Accuracy)
-
 
 if __name__ == '__main__':
     app.run(debug=True)
