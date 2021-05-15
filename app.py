@@ -113,17 +113,17 @@ def predict():
         Accuracy = str(Accuracy)
         diseasep = diagnosis_predict[0]
         diseasepredict=list[diseasep]
-        return str( diseasepredict+ " " +Accuracy + " % Your symptoms are compatible please make an appointment.")
+        return str( diseasepredict+ " " +Accuracy + " % accururacy. Your symptoms are compatible please make an appointment.")
     if Accuracy == 0: 
         Accuracy = str(Accuracy)
         diseasep = diagnosis_predict[0]
         diseasepredict=list[diseasep]        
-        return str( diseasepredict+ " " +Accuracy +" % Your symptoms were irrelevant beyond compare and we cannot offer you a disease prediction with these inputs." )
+        return str( diseasepredict+ " " +Accuracy +" % accururacy. Your symptoms were irrelevant beyond compare and we cannot offer you a disease prediction with these inputs." )
     else :
         Accuracy = str(Accuracy)
         diseasep = diagnosis_predict[0]
         diseasepredict=list[diseasep]
-        return str( diseasepredict +" " + Accuracy + "% Probably due to your irrelevant symptom inputs, you had a low accuracy.\nWe recommend you to try again with more logical symptoms or contact your MD physically.")
+        return str( diseasepredict +" " + Accuracy + "% accururacy. Probably due to your irrelevant symptom inputs, you had a low accuracy.\nWe recommend you to try again with more logical symptoms or contact your MD physically.")
         
 
 if __name__ == '__main__':
