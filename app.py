@@ -133,7 +133,8 @@ def predict():
         return str( diseasepredict+" " + Accuracy + "% Probably due to your irrelevant symptom inputs, you had a low accuracy.\nWe recommend you to try again with more logical symptoms or contact your MD physically.")
         
 
-app.run()
+if __name__ == '__main__':
+    app.run(debug=True)
 
 
 # In[ ]:
