@@ -57,15 +57,9 @@ def predict():
     parameters.append(request.args.get('Symptom_10'))
     parameters.append(request.args.get('Symptom_11'))
     
-    
-    
     print(parameters)
     intparameter= []
     for i in range(len(parameters)):
-        from sklearn.preprocessing import LabelEncoder
-        labencoder=LabelEncoder()
-        parameters=labencoder.fit_transform(parameters)
-        print("parameters label:",parameters)
         t = int(parameters[i])
         intparameter.append(t)
         print (intparameter)
@@ -114,31 +108,30 @@ def predict():
     acc_list_int
     
     Accuracy = max(acc_list_int)
+    if Accuracy == 100:
+        Accuracy = Accuracy - 0.1
+        Accuracy = str(Accuracy)
+        diseasep = diagnosis_predict[0]
+        diseasepredict=list[diseasep]
+        return str( diseasepredict+ " " +Accuracy + " % accururacy. Your symptoms are compatible please make an appointment.")
+    if Accuracy == 0: 
+        Accuracy = str(Accuracy)
+        diseasep = diagnosis_predict[0]
+        diseasepredict=list[diseasep]        
+        return str( diseasepredict+ " " +Accuracy +" % accururacy. Your symptoms were irrelevant beyond compare and we cannot offer you a disease prediction with these inputs." )
     if Accuracy >70:
         
         Accuracy = str(Accuracy)
         diseasep = diagnosis_predict[0]
         diseasepredict=list[diseasep]
         return str( diseasepredict+" " + Accuracy +" "+ " % Your symptoms are compatible please make an appointment.")
-    if Accuracy == 0: 
-        Accuracy = str(Accuracy)
-        diseasep = diagnosis_predict[0]
-        diseasepredict=list[diseasep]        
-        return str( diseasepredict+" " +Accuracy +" % Your symptoms were irrelevant beyond compare and we cannot offer you a disease prediction with these inputs." )
-    
     else :
         Accuracy = str(Accuracy)
         diseasep = diagnosis_predict[0]
         diseasepredict=list[diseasep]
-        return str( diseasepredict+" " + Accuracy + "% Probably due to your irrelevant symptom inputs, you had a low accuracy.\nWe recommend you to try again with more logical symptoms or contact your MD physically.")
+        return str( diseasepredict +" " + Accuracy + "% accururacy. Probably due to your irrelevant symptom inputs, you had a low accuracy.\nWe recommend you to try again with more logical symptoms or contact your MD physically.")
         
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-# In[ ]:
-
-
-
 
